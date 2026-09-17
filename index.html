@@ -53,6 +53,24 @@
       font-size: 0;
       line-height: 0;
     }
+     /* ===== Подчёркивание для ссылок с классом .ul ===== */
+    .ul::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: var(--ul-bottom, -2px);
+      width: var(--ul-width, 100%);
+      height: var(--ul-height, 2px);
+      background: var(--ul-color, #cfbd98);
+      border-radius: 2px;
+      opacity: .85;
+      pointer-events: none;
+      transition: opacity .15s ease;
+    }
+    .ul:hover::after {
+      opacity: 1;
+    }
     button.clickable { appearance: none; }
     .rotate { transform-origin: center; }
     .audio-progress {
@@ -106,10 +124,10 @@
     <div class="layer only-main" style="left:55.6%;top:53.99%;width:41.25%;height:45.63%;z-index:6">
       <img src="https://raw.githubusercontent.com/Chu-buk/CatWar/refs/heads/main/lay3.png" alt="" />
     </div>
-    <div class="layer always" style="left:62.6%;top:9.96%;width:35.98%;height:15.87%;z-index:6">
+    <div class="layer always" style="left:67.6%;top:9.96%;width:25.98%;height:15.87%;z-index:6">
       <img src="https://raw.githubusercontent.com/Chu-buk/CatWar/refs/heads/main/Ссылки.png" alt="" />
     </div>
-    <div class="layer only-main" style="left:4.4%;top:2.83%;width:22.48%;height:53.26%;z-index:30">
+    <div class="layer only-main" style="left:4.4%;top:2.83%;width:25.48%;height:53.26%;z-index:30">
       <img src="https://raw.githubusercontent.com/Chu-buk/CatWar/refs/heads/main/lay2_2.png" alt="" />
     </div>
 
@@ -164,35 +182,35 @@
     <button class="clickable inner-tab-click" data-pages="history1,history2,history3" data-target="appearance" style="left:5.2%;top:44.15%;width:6.3%;height:3.08%" aria-label="Внешность"></button>
 
     <!-- Главная: внешние ссылки -->
-    <a class="clickable external only-main-click" href="https://docs.google.com/spreadsheets/d/1t6GmASr5ExggViirjX7wlSe5xGUtSJJPx5ojM73-r_Y/edit?gid=1765801688#gid=1765801688" target="_blank" rel="noopener" style="left:55.2%;top:53.99%;width:7.27%;height:1.97%" aria-label="Google таблица"></a>
-    <a class="clickable external always-click rotate" href="https://vk.com/nocher" target="_blank" rel="noopener" style="left:77.59%;top:13.47%;width:3.36%;height:2.21%;transform:rotate(12.78deg)" aria-label="VK"></a>
-    <a class="clickable external only-main-click rotate" href="https://vk.com/@lir_ne_primer-chto-za-severnye-tradicii-i-s-chem-oni-havautsya-sbor-totemo" target="_blank" rel="noopener" style="left:59.4%;top:34.44%;width:1.3%;height:2.21%;transform:rotate(-8deg)" aria-label="Северные традиции"></a>
-    <a class="clickable external always-click rotate" href="https://t.me/chu_buk" target="_blank" rel="noopener" style="left:81.28%;top:14.55%;width:3.36%;height:2.21%;transform:rotate(12deg)" aria-label="Telegram"></a>
-    <a class="clickable external always-click rotate" href="https://f2.toyhou.se/file/f2-toyhou-se/images/104530402_egkdyllG0kxkDRb.png" target="_blank" rel="noopener" style="left:74.18%;top:15.53%;width:7.65%;height:3.2%;transform:rotate(12deg)" aria-label="Изображение 1"></a>
-    <a class="clickable external always-click rotate" href="https://f2.toyhou.se/file/f2-toyhou-se/images/104889102_1wojgXNENSz2ctF.png" target="_blank" rel="noopener" style="left:82.18%;top:17.62%;width:7.65%;height:3.2%;transform:rotate(12deg)" aria-label="Изображение 2"></a>
-    <a class="clickable external always-click rotate" href="https://toyhou.se/31533240.laiane" target="_blank" rel="noopener" style="left:73.78%;top:17.37%;width:7.65%;height:3.2%;transform:rotate(12deg)" aria-label="Toyhouse"></a>
-    <a class="clickable external always-click rotate" href="https://chubuk.pixieset.com/laiane/" target="_blank" rel="noopener" style="left:81.28%;top:19.22%;width:5.84%;height:3.45%;transform:rotate(12deg)" aria-label="Pixieset"></a>
+    <a class="clickable external only-main-click ul" href="https://docs.google.com/spreadsheets/d/1t6GmASr5ExggViirjX7wlSe5xGUtSJJPx5ojM73-r_Y/edit?gid=1765801688#gid=1765801688" target="_blank" rel="noopener" style="left:54.2%;top:53.99%;width:7.27%;height:1.97%;--ul-width:70%;--ul-bottom:-2px;--ul-height:1px;--ul-color:#301e12" aria-label="Google таблица"></a>
+    <a class="clickable external always-click rotate ul" href="https://vk.com/nocher" target="_blank" rel="noopener" style="left:77.4%;top:13.47%;width:3.36%;height:1.9%;transform:rotate(12.78deg);--ul-width:100%;--ul-bottom:-2px;--ul-height:1px;--ul-color:#0c037b" aria-label="VK"></a>
+    <a class="clickable external only-main-click rotate ul" href="https://vk.com/@lir_ne_primer-chto-za-severnye-tradicii-i-s-chem-oni-havautsya-sbor-totemo" target="_blank" rel="noopener" style="left:59.1%;top:34.44%;width:1.3%;height:2.21%;transform:rotate(-8deg);--ul-width:50%;--ul-bottom:2px;--ul-height:1px;--ul-color:#301e12" aria-label="Северные традиции"></a>
+    <a class="clickable external always-click rotate ul" href="https://t.me/chu_buk" target="_blank" rel="noopener" style="left:81.28%;top:14.55%;width:3.36%;height:1.9%;transform:rotate(12deg);--ul-width:100%;--ul-bottom:-2px;--ul-height:1px;--ul-color:#0c037b" aria-label="Telegram"></a>
+    <a class="clickable external always-click rotate ul" href="https://f2.toyhou.se/file/f2-toyhou-se/images/104530402_egkdyllG0kxkDRb.png" target="_blank" rel="noopener" style="left:73.18%;top:15.53%;width:7.65%;height:1.7%;transform:rotate(12deg);--ul-width:100%;--ul-bottom:-2px;--ul-height:1px;--ul-color:#0c037b" aria-label="Изображение 1"></a>
+    <a class="clickable external always-click rotate ul" href="https://f2.toyhou.se/file/f2-toyhou-se/images/104889102_1wojgXNENSz2ctF.png" target="_blank" rel="noopener" style="left:82.18%;top:17.62%;width:5.65%;height:1.7%;transform:rotate(12deg);--ul-width:100%;--ul-bottom:-2px;--ul-height:1px;--ul-color:#0c037b" aria-label="Изображение 2"></a>
+    <a class="clickable external always-click rotate ul" href="https://toyhou.se/31533240.laiane" target="_blank" rel="noopener" style="left:72.78%;top:17.37%;width:6.9%;height:1.7%;transform:rotate(12deg);--ul-width:100%;--ul-bottom:-2px;--ul-height:1px;--ul-color:#0c037b" aria-label="Toyhouse"></a>
+    <a class="clickable external always-click rotate ul" href="https://chubuk.pixieset.com/laiane/" target="_blank" rel="noopener" style="left:81.28%;top:19.22%;width:5.84%;height:1.9%;transform:rotate(12deg);--ul-width:100%;--ul-bottom:-2px;--ul-height:1px;--ul-color:#0c037b" aria-label="Pixieset"></a>
 
     <!-- Ссылки на персонажей -->
-    <a class="clickable character-link only-main-click rotate" href="https://catwar.su/cat557463" target="_blank" rel="noopener" style="left:90.33%;top:54.95%;width:3.06%;height:2.21%;transform:rotate(3deg)" aria-label="cat557463"></a>
-    <a class="clickable character-link only-main-click rotate" href="https://catwar.su/cat1538306" target="_blank" rel="noopener" style="left:87.23%;top:56.73%;width:3.06%;height:2.21%;transform:rotate(-20.61deg)" aria-label="cat1538306"></a>
-    <a class="clickable character-link only-main-click rotate" href="https://catwar.su/cat1380944" target="_blank" rel="noopener" style="left:83.11%;top:58.57%;width:3.06%;height:2.21%;transform:rotate(33.57deg)" aria-label="cat1380944"></a>
-    <a class="clickable character-link only-main-click" href="https://catwar.su/cat9694" target="_blank" rel="noopener" style="left:88.5%;top:60.02%;width:3.06%;height:2.21%" aria-label="cat9694"></a>
-    <a class="clickable character-link only-main-click rotate" href="https://catwar.su/cat1649090" target="_blank" rel="noopener" style="left:92%;top:58.3%;width:3.06%;height:2.21%;transform:rotate(7deg)" aria-label="cat1649090"></a>
-    <a class="clickable character-link only-main-click rotate" href="https://catwar.su/cat1688537" target="_blank" rel="noopener" style="left:87.3%;top:65.8%;width:3.06%;height:2.21%;transform:rotate(1deg)" aria-label="cat1688537"></a>
-    <a class="clickable character-link only-main-click rotate" href="https://catwar.su/cat1633085" target="_blank" rel="noopener" style="left:90.33%;top:63.13%;width:5.37%;height:2.46%;transform:rotate(10deg)" aria-label="cat1633085"></a>
-    <a class="clickable character-link only-main-click rotate" href="https://catwar.su/cat1678463" target="_blank" rel="noopener" style="left:92.2%;top:70.6%;width:5.37%;height:2.46%;transform:rotate(-51deg)" aria-label="cat1678463"></a>
-    <a class="clickable character-link only-main-click rotate" href="https://catwar.su/cat1559573" target="_blank" rel="noopener" style="left:84.55%;top:70.59%;width:5.37%;height:2.46%;transform:rotate(15deg)" aria-label="cat1559573"></a>
-    <a class="clickable character-link only-main-click rotate" href="https://catwar.su/cat1330492" target="_blank" rel="noopener" style="left:82.88%;top:67.52%;width:5.37%;height:2.46%;transform:rotate(25deg)" aria-label="cat1330492"></a>
-    <a class="clickable character-link only-main-click rotate" href="https://catwar.su/cat140817" target="_blank" rel="noopener" style="left:89.10%;top:71.05%;width:5.37%;height:2.46%;transform:rotate(-10deg)" aria-label="cat140817"></a>
+    <a class="clickable character-link always-click rotate ul" href="https://catwar.su/cat557463" target="_blank" rel="noopener" style="left:90.33%;top:54.95%;width:2.06%;height:2.1%;transform:rotate(3deg);--ul-width:100%;--ul-bottom:-2px;--ul-height:1px;--ul-color:#301e12" aria-label="cat557463"></a>
+    <a class="clickable character-link always-click rotate ul" href="https://catwar.su/cat1538306" target="_blank" rel="noopener" style="left:87.23%;top:56.73%;width:2.06%;height:2.1%;transform:rotate(-20.61deg);--ul-width:100%;--ul-bottom:-2px;--ul-height:1px;--ul-color:#301e12" aria-label="cat1538306"></a>
+    <a class="clickable character-link always-click rotate ul" href="https://catwar.su/cat1380944" target="_blank" rel="noopener" style="left:83.11%;top:58.57%;width:3.06%;height:2.1%;transform:rotate(33.57deg);--ul-width:100%;--ul-bottom:-2px;--ul-height:1px;--ul-color:#301e12" aria-label="cat1380944"></a>
+    <a class="clickable character-link always-click ul" href="https://catwar.su/cat9694" target="_blank" rel="noopener" style="left:88.5%;top:60.02%;width:2.06%;height:1.9%;--ul-width:100%;--ul-bottom:-2px;--ul-height:1px;--ul-color:#301e12" aria-label="cat9694"></a>
+    <a class="clickable character-link always-click rotate ul" href="https://catwar.su/cat1649090" target="_blank" rel="noopener" style="left:92%;top:58.3%;width:2.06%;height:1.8%;transform:rotate(7deg);--ul-width:100%;--ul-bottom:-2px;--ul-height:1px;--ul-color:#301e12" aria-label="cat1649090"></a>
+    <a class="clickable character-link always-click rotate ul" href="https://catwar.su/cat1688537" target="_blank" rel="noopener" style="left:87.3%;top:65.8%;width:2.6%;height:1.8%;transform:rotate(1deg);--ul-width:100%;--ul-bottom:-2px;--ul-height:1px;--ul-color:#301e12" aria-label="cat1688537"></a>
+    <a class="clickable character-link always-click rotate ul" href="https://catwar.su/cat1633085" target="_blank" rel="noopener" style="left:89.8%;top:63.13%;width:5.39%;height:1.8%;transform:rotate(10deg);--ul-width:100%;--ul-bottom:-2px;--ul-height:1px;--ul-color:#301e12" aria-label="cat1633085"></a>
+    <a class="clickable character-link always-click rotate ul" href="https://catwar.su/cat1678463" target="_blank" rel="noopener" style="left:92.2%;top:70.6%;width:3.37%;height:2.7%;transform:rotate(-51deg);--ul-width:100%;--ul-bottom:-2px;--ul-height:1px;--ul-color:#301e12" aria-label="cat1678463"></a>
+    <a class="clickable character-link always-click rotate ul" href="https://catwar.su/cat1559573" target="_blank" rel="noopener" style="left:84.55%;top:70.59%;width:3.2%;height:1.5%;transform:rotate(15deg);--ul-width:100%;--ul-bottom:-2px;--ul-height:1px;--ul-color:#301e12" aria-label="cat1559573"></a>
+    <a class="clickable character-link always-click rotate ul" href="https://catwar.su/cat1330492" target="_blank" rel="noopener" style="left:82.88%;top:67.52%;width:2.37%;height:1.1%;transform:rotate(25deg);--ul-width:100%;--ul-bottom:-2px;--ul-height:1px;--ul-color:#301e12" aria-label="cat1330492"></a>
+    <a class="clickable character-link always-click rotate ul" href="https://catwar.su/cat140817" target="_blank" rel="noopener" style="left:88.90%;top:71.05%;width:4.37%;height:1.5%;transform:rotate(-10deg);--ul-width:100%;--ul-bottom:-2px;--ul-height:1px;--ul-color:#301e12" aria-label="cat140817"></a>
 
-    <!-- История: стрелки -->
+  <!-- История: стрелки -->
     <button class="layer history-nav" data-show="history1" data-target="history2" style="left:70%;top:79.6%;width:10.9%;height:2.1%;z-index:80" aria-label="Следующая страница истории"></button>
     <button class="layer history-nav" data-show="history2" data-target="history1" style="left:14.3%;top:79.6%;width:10.9%;height:2.1%;z-index:81" aria-label="Предыдущая страница истории"></button>
-    <button class="layer history-nav" data-show="history3" data-target="history2" style="left:10.3%;top:18.6%;width:10.9%;height:4.6%;z-index:82" aria-label="Предыдущая страница истории">
+    <button class="layer history-nav" data-show="history3" data-target="history1" style="left:10.3%;top:18.6%;width:10.9%;height:4.6%;z-index:82" aria-label="Предыдущая страница истории">
       <img src="https://raw.githubusercontent.com/Chu-buk/CatWar/refs/heads/main/Стрелка%20влево.png" alt="" />
     </button>
-    <button class="layer history-nav" data-show="history1,history2" data-target-next-history="true" style="left:37.3%;top:18.6%;width:10.9%;height:4.6%;z-index:83" aria-label="Следующая страница истории">
+    <button class="layer history-nav" data-show="history1,history2" data-target="history3" style="left:37.3%;top:18.6%;width:10.9%;height:4.6%;z-index:83" aria-label="Следующая страница истории">
       <img src="https://raw.githubusercontent.com/Chu-buk/CatWar/refs/heads/main/стрелка%20вправо.png" alt="" />
     </button>
 
